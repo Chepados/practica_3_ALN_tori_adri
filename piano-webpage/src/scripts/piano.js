@@ -144,3 +144,67 @@ function playProgression(progression, tonality) {
 async function fetchProgression() {
     return [1, 6, 4, 1]; // Simula la progresión [1, 6, 4, 1]
 }
+
+
+
+// mapearlo con las teclas del teclado
+
+// Mapea las teclas físicas a las notas del piano
+const keyMap = {
+    // octava baja
+    "º": "C1",
+    "1": "Db1",
+    "2": "D1",
+    "3": "Eb1",
+    "4": "E1",
+    "5": "F1",
+    "6": "Gb1",
+    "7": "G1",
+    "8": "Ab1",
+    "9": "A1",
+    "0": "Bb1",
+    "'": "B1",
+    // octava alta
+    "q": "C2",
+    "w": "Db2",
+    "e": "D2",
+    "r": "Eb2",
+    "t": "E2",
+    "y": "F2",
+    "u": "Gb2",
+    "i": "G2",
+    "o": "Ab2",
+    "p": "A2",
+    "j": "Bb2",
+    "k": "B2",
+    "l": "C3"
+};
+
+// Agrega el evento de escucha para el teclado
+document.addEventListener("keydown", (event) => {
+    event.preventDefault(); // Previene conflictos con el navegador
+    const key = event.key; // Obtiene la tecla presionada
+
+    // Verifica si la tecla está mapeada
+    if (key in keyMap) {
+        const note = keyMap[key]; // Obtiene la nota correspondiente
+        playSoundByKey(note); // Reproduce la nota correspondiente
+    }
+});
+
+// Función para reproducir una nota específica del teclado
+function playSoundByKey(note) {
+    const audio = new Audio(`../sounds/${note}.mp3`); // Ruta al archivo de audio
+    audio.play();
+
+    // Encuentra la tecla en el DOM
+    const keyElement = document.querySelector(`.key[data-note="${note}"]`);
+    if (keyElement) {
+        keyElement.classList.add("active"); // Activa el estilo visual
+        setTimeout(() => keyElement.classList.remove("active"), 1800); // Desactiva después de 1.8 segundos
+    } else {
+        console.warn(`No se encontró una tecla en el DOM para la nota: ${note}`);
+    }
+
+    console.log(`Reproduciendo nota: ${note}`);
+}
