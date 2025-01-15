@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Webpage</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="controls">
+        <select id="tonality-selector">
+            <option value="C">C (Do Mayor)</option>
+            <option value="Db">Db (Re bemol Mayor)</option>
+            <option value="D">D (Re Mayor)</option>
+            <option value="Eb">Eb (Mi bemol Mayor)</option>
+            <option value="E">E (Mi Mayor)</option>
+            <option value="F">F (Fa Mayor)</option>
+            <option value="Gb">Gb (Sol bemol Mayor)</option>
+            <option value="G">G (Sol Mayor)</option>
+            <option value="Ab">Ab (La bemol Mayor)</option>
+            <option value="A">A (La Mayor)</option>
+            <option value="Bb">Bb (Si bemol Mayor)</option>
+            <option value="B">B (Si Mayor)</option>
+        </select>
+        <button id="play-button">Play</button>
+    </div>
+      
+    <div class="piano">
+        <!-- First Octave -->
+        <div class="key white" data-note="C1"></div>
+        <div class="key black" data-note="Db1"></div>
+        <div class="key white" data-note="D1"></div>
+        <div class="key black" data-note="Eb1"></div>
+        <div class="key white" data-note="E1"></div>
+        <div class="key white" data-note="F1"></div>
+        <div class="key black" data-note="Gb1"></div>
+        <div class="key white" data-note="G1"></div>
+        <div class="key black" data-note="Ab1"></div>
+        <div class="key white" data-note="A1"></div>
+        <div class="key black" data-note="Bb1"></div>
+        <div class="key white" data-note="B1"></div>
+        <!-- Second Octave -->
+        <div class="key white" data-note="C2"></div>
+        <div class="key black" data-note="Db2"></div>
+        <div class="key white" data-note="D2"></div>
+        <div class="key black" data-note="Eb2"></div>
+        <div class="key white" data-note="E2"></div>
+        <div class="key white" data-note="F2"></div>
+        <div class="key black" data-note="Gb2"></div>
+        <div class="key white" data-note="G2"></div>
+        <div class="key black" data-note="Ab2"></div>
+        <div class="key white" data-note="A2"></div>
+        <div class="key black" data-note="Bb2"></div>
+        <div class="key white" data-note="B2"></div>
+        <div class="key white" data-note="C3"></div>
+    </div>
+    <script src="scripts/piano.js"></script>
+</body>
+</html>

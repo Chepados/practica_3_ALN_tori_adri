@@ -1,0 +1,122 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    background-image: url('../images/clave_sol.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.piano {
+    display: flex;
+    position: relative;
+    border: 2px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.key {
+    width: 60px;
+    height: 300px;
+    background-color: white;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.key.white {
+    position: relative;
+    z-index: 0;
+}
+
+.key.black {
+    width: 40px;
+    height: 180px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Posicionamiento de teclas negras */
+.key.black:nth-of-type(2) { left: calc(60px * 0.75); } /* Entre 1 y 2 blancas */
+.key.black:nth-of-type(4) { left: calc(60px * 1.75); } /* Entre 2 y 3 blancas */
+.key.black:nth-of-type(7) { left: calc(60px * 3.75); } /* Entre 4 y 5 blancas */
+.key.black:nth-of-type(9) { left: calc(60px * 4.75); } /* Entre 5 y 6 blancas */
+.key.black:nth-of-type(11) { left: calc(60px * 5.75); } /* Entre 6 y 7 blancas */
+.key.black:nth-of-type(14) { left: calc(60px * 7.75); } /* Entre 8 y 9 blancas */
+.key.black:nth-of-type(16) { left: calc(60px * 8.75); } /* Entre 9 y 10 blancas */
+.key.black:nth-of-type(19) { left: calc(60px * 10.75); } /* Entre 11 y 12 blancas */
+.key.black:nth-of-type(21) { left: calc(60px * 11.75); } /* Entre 12 y 13 blancas */
+.key.black:nth-of-type(23) { left: calc(60px * 12.75); } /* Entre 13 y 14 blancas */
+
+/* Interacción */
+.key.white:active {
+    background-color: #e0e0e0;
+}
+
+.key.black:active {
+    background-color: #333;
+}
+
+/* Estilo de activación para teclas blancas */
+.key.white.active {
+    background-color: #ffc107; /* Amarillo claro */
+}
+
+/* Estilo de activación para teclas negras */
+.key.black.active {
+    background-color: #ff6f00; /* Naranja oscuro */
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+#tonality-selector {
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+#tonality-selector:hover {
+    border-color: #666;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+#play-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6f00;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#play-button:hover {
+    background-color: #e65a00;
+    transform: scale(1.05);
+}
+
+#play-button:active {
+    background-color: #cc4e00;
+    transform: scale(0.95);
+}
